@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, {
+  //  useEffect, 
+  useState } from 'react';
 // import { Square } from '../square/square';
 import './newCube.css'; // Подключение стилей
 

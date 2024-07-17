@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Square } from "../modules/square/square";
-import { Cube } from '../modules/cube/cube';
+// import { Square } from "../modules/square/square";
+// import { Cube } from '../modules/cube/cube';
 import { NewCube } from '../modules/newCube/newCube';
 // import { ThreeDCube } from '../modules/cube/cube';
 
