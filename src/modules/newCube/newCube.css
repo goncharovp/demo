@@ -1,3 +1,9 @@
+button {
+  height: 40px;
+  width: 80px;
+  border-radius: 16px;
+}
+
 .square {
   display: grid;
   grid-template-columns: repeat(6, 1fr);

@@ -1,0 +1,32 @@
+
+.large-square {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 5px;
+    width: 300px;
+    height: 300px;
+  }
+  
+  .small-square-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+    width: 200px;
+    height: 200px;
+  }
+  
+  .small-square {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+  }
+  
+  .shown {
+    display: block;
+  }
+  
+  .hidden {
+    opacity: 0;
+    background-color: rgb(234, 22, 22);
+    display: none;
+  }  

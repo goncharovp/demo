@@ -69,40 +69,41 @@ export const NewCube = ({setChange}: {setChange: any}) => {
   let x = 0,
     y = 0
   const handleUp = () => {
-      x += 5
+      x += 10
       const a = document?.querySelector('.cube') as HTMLDivElement
       if (a) {
         a.style.transform = `rotateY(${y}deg) rotateX(${x}deg)`
       }
   }
   const handleDown = () => {
-      x -= 5
+      x -= 10
       const a = document?.querySelector('.cube') as HTMLDivElement
       if (a) {
         a.style.transform = `rotateY(${y}deg) rotateX(${x}deg)`
       }
   }
   const handleRight = () => {
-    y -= 5
+    y -= 10
     const a = document?.querySelector('.cube') as HTMLDivElement
     if (a) {
       a.style.transform = `rotateY(${y}deg) rotateX(${x}deg)`
     }
 }
 const handleLeft = () => {
-  y += 5
+  y += 10
   const a = document?.querySelector('.cube') as HTMLDivElement
   if (a) {
     a.style.transform = `rotateY(${y}deg) rotateX(${x}deg)`
   }
 }
   return (
-    <div>
-      <div style={{ marginBottom: '20px', position: 'absolute', top: 0, gap: 16 }}>
-        <button onClick={handleUp}>up</button>
-        <button onClick={handleLeft}>left</button>
-        <button onClick={handleDown}>down</button>
-        <button onClick={handleRight}>right</button>
+    <div style={{display: 'flex', justifyContent: 'center'}}>
+    <div style={{position: 'relative'}}>
+      <div style={{ marginBottom: '20px', gap: 16 }}>
+        <button onClick={handleUp} style={{position: 'absolute', left: '100px', top: '-70px'}}>up</button>
+        <button onClick={handleLeft} style={{position: 'absolute', left: '-150px', top: '200px'}}>left</button>
+        <button onClick={handleDown} style={{position: 'absolute', left: '100px', top: '420px'}}>down</button>
+        <button onClick={handleRight} style={{position: 'absolute', left: '410px', top: '200px'}}>right</button>
       </div>
       <div className="cube">
         <div className="side front"><Square setSides={setSides}/></div>
@@ -112,6 +113,7 @@ const handleLeft = () => {
         <div className="side top"><Square setSides={setSides}/></div>
         <div className="side bottom"><Square setSides={setSides}/></div>
       </div>
+    </div>
     </div>
   );
 }
@@ -149,12 +151,12 @@ const handleLeft = () => {
 }
   return (
     <div>
-      <div style={{ marginBottom: '20px', position: 'absolute', top: 0, justifyContent: 'center', alignItems: 'center' }}>
+      {/* <div style={{ display: 'flex',gap: 16, marginBottom: '20px', position: 'absolute', top: 0 }}>
         <button onClick={handleUp}>up</button>
         <button onClick={handleLeft}>left</button>
         <button onClick={handleDown}>down</button>
         <button onClick={handleRight}>right</button>
-      </div>
+      </div> */}
       <div className="cube2">
       <div className="side2 front2"><SquareSmall /></div>
         <div className="side2 back2"><SquareSmall /></div>
