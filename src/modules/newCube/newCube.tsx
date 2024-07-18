@@ -151,12 +151,12 @@ const handleLeft = () => {
 }
   return (
     <div>
-      {/* <div style={{ display: 'flex',gap: 16, marginBottom: '20px', position: 'absolute', top: 0 }}>
+      <div style={{ display: 'flex',gap: 16, marginBottom: '20px', position: 'absolute', top: 0 }}>
         <button onClick={handleUp}>up</button>
         <button onClick={handleLeft}>left</button>
         <button onClick={handleDown}>down</button>
         <button onClick={handleRight}>right</button>
-      </div> */}
+      </div>
       <div className="cube2">
       <div className="side2 front2"><SquareSmall /></div>
         <div className="side2 back2"><SquareSmall /></div>
