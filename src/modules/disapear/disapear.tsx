@@ -23,19 +23,19 @@ export const Dissapear = () => {
         });
     };
 
-
+    const noBigSquare = smallSquaresOpacity.includes(1)
   
     return (
       <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
         <div style={{position: 'relative'}}>
-        <div className="large-square">
+        {noBigSquare && <div className="large-square" style={{ order: 1 }}>
           {smallSquaresOpacity.map((opacity, index) => (
             <div key={index} className={`small-square`} style={{ opacity: opacity }} onClick={() => handleSmallSquareClick(index)} />
           ))}
-        </div>
-        <div className="small-square-container">
+        </div>}
+        <div className="small-square-container" style={{ order: 2 }}>
           {smallSquaresOpacity2.map((opacity, index) => (
-            <div key={index} className={`small-square`} style={{ opacity: opacity }} onClick={() => handleSmallSquareClick2(index)} />
+            <div key={index} className={`small-square2`} style={{ opacity: opacity }} onClick={() => handleSmallSquareClick2(index)} />
           ))}
         </div>
         </div>

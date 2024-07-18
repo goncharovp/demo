@@ -10,10 +10,10 @@ import { Dissapear } from '../modules/disapear/disapear';
 
 export const MainPage = () => {
     const [change, setChange] = useState(false)
-    const [variant, setVariant] = useState(1)
+    const [variant, setVariant] = useState(2)
     return (
         <div style={{height: '90vh', width: '90vw', display: 'flex', flexDirection: 'column', gap: 16, alignContent: 'center', justifyContent: 'center'}}>
-           <div style={{position: 'absolute', display: 'flex', flexDirection: 'column', gap: 16,}}>
+           <div style={{ display: 'flex', flexDirection: 'column', gap: 16,}}>
             <button onClick={() => setVariant(1)}>Куб</button>
             <button onClick={() => setVariant(2)}>Грань</button>
            </div> 

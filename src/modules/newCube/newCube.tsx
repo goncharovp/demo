@@ -100,10 +100,10 @@ const handleLeft = () => {
     <div style={{display: 'flex', justifyContent: 'center'}}>
     <div style={{position: 'relative'}}>
       <div style={{ marginBottom: '20px', gap: 16 }}>
-        <button onClick={handleUp} style={{position: 'absolute', left: '100px', top: '-70px'}}>up</button>
-        <button onClick={handleLeft} style={{position: 'absolute', left: '-150px', top: '200px'}}>left</button>
-        <button onClick={handleDown} style={{position: 'absolute', left: '100px', top: '420px'}}>down</button>
-        <button onClick={handleRight} style={{position: 'absolute', left: '410px', top: '200px'}}>right</button>
+        <button onClick={handleUp} >up</button>
+        <button onClick={handleDown} >down</button>
+        <button onClick={handleLeft} >left</button>
+        <button onClick={handleRight}>right</button>
       </div>
       <div className="cube">
         <div className="side front"><Square setSides={setSides}/></div>
