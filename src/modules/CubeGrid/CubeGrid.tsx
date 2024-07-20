@@ -94,7 +94,7 @@ export const CubeGrid = () => {
             renderer.domElement.remove();
             window.removeEventListener('click', handleMouseClick);
         };
-    }, []);
+    }, [camera, mouse, objectList, raycaster, renderer, scene]);
 
 
 
