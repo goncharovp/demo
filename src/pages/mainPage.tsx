@@ -6,7 +6,7 @@ import  {
 // import { Cube } from '../modules/cube/cube';
 import { NewCube, NewCubeSmall } from '../modules/newCube/newCube';
 import { Dissapear } from '../modules/disapear/disapear';
-import { SeparateCube } from '../modules/SeparateCube/SeparateCube';
+// import { SeparateCube } from '../modules/SeparateCube/SeparateCube';
 //@ts-ignore
 import { CubeGrid } from 'src/modules/CubeGrid/CubeGrid';
 // import { ThreeDCube } from '../modules/cube/cube';
