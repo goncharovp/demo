@@ -99,7 +99,7 @@ const handleLeft = () => {
   return (
     <div style={{display: 'flex', justifyContent: 'center'}}>
     <div style={{position: 'relative'}}>
-      <div style={{ marginBottom: '20px', gap: 16 }}>
+      <div style={{ marginBottom: '80px', gap: 16 }}>
         <button onClick={handleUp} >up</button>
         <button onClick={handleDown} >down</button>
         <button onClick={handleLeft} >left</button>

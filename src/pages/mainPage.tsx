@@ -13,13 +13,13 @@ import { CubeGrid } from 'src/modules/CubeGrid/CubeGrid';
 
 export const MainPage = () => {
     const [change, setChange] = useState(false)
-    const [variant, setVariant] = useState(3)
+    const [variant, setVariant] = useState(1)
     return (
         <div style={{height: '90vh', width: '90vw', display: 'flex', flexDirection: 'column', gap: 16, alignContent: 'center', justifyContent: 'center'}}>
            <div style={{ display: 'flex', flexDirection: 'column', gap: 16,}}>
             <button onClick={() => setVariant(1)}>Куб</button>
-            <button onClick={() => setVariant(2)}>Грань</button>
-            <button onClick={() => setVariant(3)}>Отдельный кубик</button>
+            <button onClick={() => setVariant(2)}>Грань из квадратов</button>
+            <button onClick={() => setVariant(3)}>Грань из кубов</button>
            </div> 
         <div style={{display: 'flex', flexDirection: variant === 3 ? 'row' : 'column', gap: 16, alignContent: 'center', justifyContent: 'center'}}>
             {/* <Square /> */}

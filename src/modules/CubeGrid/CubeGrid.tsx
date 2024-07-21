@@ -14,7 +14,7 @@ export const CubeGrid = () => {
     useEffect(() => {
         const cubesPerRow = 6;
         const cubeSize = 0.3;
-        const spacing = 0.01;
+        const spacing = 0.1;
         // const padding = 2
 //         const width = cubesPerRow * (cubeSize + spacing) + padding;
 // const height = cubesPerRow * (cubeSize + spacing) + padding;
@@ -43,7 +43,7 @@ export const CubeGrid = () => {
         for (let i = 0; i < cubesPerRow; i++) {
             for (let j = 0; j < cubesPerRow; j++) {
                 const geometry = new THREE.BoxGeometry(cubeSize, cubeSize, cubeSize);
-                const material = new THREE.MeshBasicMaterial({ color: 0x94f500, transparent: true, opacity: 1 }); 
+                const material = new THREE.MeshBasicMaterial({ color: 0x94f500, transparent: false, opacity: 1 }); 
                 const cube = new THREE.Mesh(geometry, material);
                 const edges = new THREE.EdgesGeometry(geometry);
                 const lineMaterial = new THREE.LineBasicMaterial({ color: 0x000000 }); // Черный цвет границы
@@ -72,11 +72,13 @@ export const CubeGrid = () => {
             const intersects = raycaster.intersectObjects(objectList, true);
 
             if (intersects.length > 0) {
-                const selectedObject = intersects[0].object as THREE.Mesh;
+                const selectedObject = intersects[0].object as THREE.Mesh<THREE.BoxGeometry, THREE.MeshBasicMaterial, THREE.Object3DEventMap>;
+                console.log(selectedObject.material.transparent)
                 selectedObject.userData.isTransparent = !selectedObject.userData.isTransparent;
-                //@ts-ignore
+                selectedObject.material.transparent = true
+
                 selectedObject.material.opacity = selectedObject.userData.isTransparent ? 0 : 1;
-                //@ts-ignore
+
                 selectedObject.material.needsUpdate = true;
             }
         };
