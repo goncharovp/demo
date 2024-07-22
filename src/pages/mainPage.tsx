@@ -13,7 +13,7 @@ import { CubeGrid } from 'src/modules/CubeGrid/CubeGrid';
 
 export const MainPage = () => {
     const [change, setChange] = useState(false)
-    const [variant, setVariant] = useState(1)
+    const [variant, setVariant] = useState(3)
     return (
         <div style={{height: '90vh', width: '90vw', display: 'flex', flexDirection: 'column', gap: 16, alignContent: 'center', justifyContent: 'center'}}>
            <div style={{ display: 'flex', flexDirection: 'column', gap: 16,}}>

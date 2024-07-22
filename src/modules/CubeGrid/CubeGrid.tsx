@@ -14,7 +14,7 @@ export const CubeGrid = () => {
     useEffect(() => {
         const cubesPerRow = 6;
         const cubeSize = 0.3;
-        const spacing = 0.1;
+        const spacing = 0.05;
         // const padding = 2
 //         const width = cubesPerRow * (cubeSize + spacing) + padding;
 // const height = cubesPerRow * (cubeSize + spacing) + padding;
@@ -43,7 +43,7 @@ export const CubeGrid = () => {
         for (let i = 0; i < cubesPerRow; i++) {
             for (let j = 0; j < cubesPerRow; j++) {
                 const geometry = new THREE.BoxGeometry(cubeSize, cubeSize, cubeSize);
-                const material = new THREE.MeshBasicMaterial({ color: 0x94f500, transparent: false, opacity: 1 }); 
+                const material = new THREE.MeshBasicMaterial({ color: 0x94f500, transparent: true, opacity: 1 }); 
                 const cube = new THREE.Mesh(geometry, material);
                 const edges = new THREE.EdgesGeometry(geometry);
                 const lineMaterial = new THREE.LineBasicMaterial({ color: 0x000000 }); // Черный цвет границы
@@ -69,17 +69,14 @@ export const CubeGrid = () => {
             raycaster.setFromCamera(mouse, camera);
 
             // Проверяем пересечение с объектами
-            const intersects = raycaster.intersectObjects(objectList, true);
-
-            if (intersects.length > 0) {
-                const selectedObject = intersects[0].object as THREE.Mesh<THREE.BoxGeometry, THREE.MeshBasicMaterial, THREE.Object3DEventMap>;
-                console.log(selectedObject.material.transparent)
-                selectedObject.userData.isTransparent = !selectedObject.userData.isTransparent;
-                selectedObject.material.transparent = true
-
-                selectedObject.material.opacity = selectedObject.userData.isTransparent ? 0 : 1;
-
-                selectedObject.material.needsUpdate = true;
+            const intersects = raycaster.intersectObjects( scene.children );
+            for ( let i = 0; i < intersects.length; i ++ ) {
+                console.log(intersects[i].object)
+                //@ts-ignore
+                intersects[i].object.material.opacity = 0
+                //@ts-ignore
+                // intersects[i].object.geometry = null
+        
             }
         };
 
