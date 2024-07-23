@@ -8,12 +8,15 @@ import { NewCube, NewCubeSmall } from '../modules/newCube/newCube';
 import { Dissapear } from '../modules/disapear/disapear';
 // import { SeparateCube } from '../modules/SeparateCube/SeparateCube';
 //@ts-ignore
-import { CubeGrid } from 'src/modules/CubeGrid/CubeGrid';
+// import { CubeGrid } from 'src/modules/CubeGrid/CubeGrid';
+
+//@ts-ignore
+import { ReactCube } from 'src/modules/ReactCube/ReactCube';
 // import { ThreeDCube } from '../modules/cube/cube';
 
 export const MainPage = () => {
     const [change, setChange] = useState(false)
-    const [variant, setVariant] = useState(3)
+    const [variant, setVariant] = useState(1)
     return (
         <div style={{height: '90vh', width: '90vw', display: 'flex', flexDirection: 'column', gap: 16, alignContent: 'center', justifyContent: 'center'}}>
            <div style={{ display: 'flex', flexDirection: 'column', gap: 16,}}>
@@ -26,9 +29,10 @@ export const MainPage = () => {
             {/* <Cube /> */}
             {variant === 1 && (!change ? <NewCube setChange={setChange}/> :
             <NewCubeSmall />)}
-            {variant ===2 && <Dissapear />}
+            {variant ===3 && <Dissapear />}
+            {variant ===2 && <ReactCube />}
             {/* {variant === 3 && <SeparateCube />} */}
-            {variant === 3 && <CubeGrid />}
+            {/* {variant === 3 && <CubeGrid />} */}
         </div>
         </div>
     )
