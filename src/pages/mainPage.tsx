@@ -23,7 +23,7 @@ export const MainPage = () => {
             <button onClick={() => setVariant(1)}>Куб</button>
             <button onClick={() => setVariant(2)}>Куб из кубов</button>
             <button onClick={() => setVariant(3)}>Грань из квадратов</button>
-            <button onClick={() => setVariant(4)}>Большой куб</button>
+            {/* <button onClick={() => setVariant(4)}>Большой куб</button> */}
            </div> 
         <div style={{display: 'flex', flexDirection: variant === 3 ? 'row' : 'column', gap: 16, alignContent: 'center', justifyContent: 'center'}}>
             {/* <Square /> */}

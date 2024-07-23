@@ -66,9 +66,11 @@ export const ReactCube = () => {
             {cubes}
             </group>
         </Canvas>
+        <div style={{display: 'flex', gap: 8}}>
         <button onClick={handleRotateX}>Rotate X</button>
         <button onClick={handleRotateY}>Rotate Y</button>
         <button onClick={handleRotateZ}>Rotate Z</button>
+        </div>
 </>
     );
 };
