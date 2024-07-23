@@ -13,7 +13,7 @@ export const CubeGrid = () => {
 
     useEffect(() => {
         const cubesPerRow = 6;
-        const cubeSize = 0.3;
+        const cubeSize = 0.2;
         const spacing = 0.05;
         // const padding = 2
 //         const width = cubesPerRow * (cubeSize + spacing) + padding;
@@ -39,10 +39,13 @@ export const CubeGrid = () => {
 
         camera.position.z = 2;
 
+        const geometry = new THREE.BoxGeometry(cubeSize, cubeSize, cubeSize);
 
         for (let i = 0; i < cubesPerRow; i++) {
             for (let j = 0; j < cubesPerRow; j++) {
-                const geometry = new THREE.BoxGeometry(cubeSize, cubeSize, cubeSize);
+                for (let k = 0; k < cubesPerRow; k++) {
+
+                // const geometry = new THREE.BoxGeometry(cubeSize, cubeSize, cubeSize);
                 const material = new THREE.MeshBasicMaterial({ color: 0x94f500, transparent: true, opacity: 1 }); 
                 const cube = new THREE.Mesh(geometry, material);
                 const edges = new THREE.EdgesGeometry(geometry);
@@ -51,12 +54,15 @@ export const CubeGrid = () => {
                 cube.add(edgesLine);
                 cube.position.set(i * (cubeSize + spacing) - cubesPerRow * (cubeSize + spacing) / 2,
                                   j * (cubeSize + spacing) - cubesPerRow * (cubeSize + spacing) / 2,
-                                  0);
+                                  k * (cubeSize + spacing) - (cubesPerRow-1) * (cubeSize + spacing) / 2
+                                );
+
 
                 cube.userData.isTransparent = false; 
 
                 objectList.push(cube);
                 scene.add(cube);
+            }
             }
         }
 
