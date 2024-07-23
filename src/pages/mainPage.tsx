@@ -19,10 +19,11 @@ export const MainPage = () => {
     const [variant, setVariant] = useState(1)
     return (
         <div style={{height: '90vh', width: '90vw', display: 'flex', flexDirection: 'column', gap: 16, alignContent: 'center', justifyContent: 'center'}}>
-           <div style={{ display: 'flex', flexDirection: 'column', gap: 16,}}>
+           <div style={{ display: 'flex',  gap: 16,}}>
             <button onClick={() => setVariant(1)}>Куб</button>
-            <button onClick={() => setVariant(2)}>Грань из квадратов</button>
-            <button onClick={() => setVariant(3)}>Грань из кубов</button>
+            <button onClick={() => setVariant(2)}>Куб из кубов</button>
+            <button onClick={() => setVariant(3)}>Грань из квадратов</button>
+            <button onClick={() => setVariant(4)}>Большой куб</button>
            </div> 
         <div style={{display: 'flex', flexDirection: variant === 3 ? 'row' : 'column', gap: 16, alignContent: 'center', justifyContent: 'center'}}>
             {/* <Square /> */}
@@ -31,6 +32,7 @@ export const MainPage = () => {
             <NewCubeSmall />)}
             {variant ===3 && <Dissapear />}
             {variant ===2 && <ReactCube />}
+            {/* {variant ===4 && <ReactCube big />} */}
             {/* {variant === 3 && <SeparateCube />} */}
             {/* {variant === 3 && <CubeGrid />} */}
         </div>
