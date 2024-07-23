@@ -28,7 +28,7 @@ export const ReactCube = () => {
     const Cube = ({ position, coords, cubeName, cubeOpacity, setCubeOpacity }: { position: any, coords: any, cubeName: string, cubeOpacity: any, setCubeOpacity: any }) => {
         // const [opacity, setOpasity] = useState(1)
         const outerLayer = coords[2] === 0 || coords[2] === 5 || coords[1] === 0 || coords[1] === 5 || coords[0] === 0 || coords[0] === 5;
-console.log(cubeOpacity)
+// console.log(cubeOpacity)
                 const handleClick = () => {
             if(outerLayer) {
                 setCubeOpacity((prev: any) => ([

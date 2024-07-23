@@ -77,7 +77,7 @@ export const CubeGrid = () => {
             // Проверяем пересечение с объектами
             const intersects = raycaster.intersectObjects( scene.children );
             for ( let i = 0; i < intersects.length; i ++ ) {
-                console.log(intersects[i].object)
+                // console.log(intersects[i].object)
                 //@ts-ignore
                 intersects[i].object.material.opacity = 0
                 //@ts-ignore
