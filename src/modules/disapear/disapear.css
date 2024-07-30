@@ -1,7 +1,7 @@
 
 .large-square {
     display: grid;
-    grid-template-columns: repeat(750, 1fr);
+    grid-template-columns: repeat(500, 1fr);
     grid-gap: 1px;
     width: 300px;
     height: 300px;
