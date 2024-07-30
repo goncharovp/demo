@@ -3,7 +3,8 @@ import './disapear.css'
 
 export const Dissapear = () => {
     // const [largeSquares, setLargeSquares] = useState(Array(36).fill(true));
-    const [smallSquaresOpacity, setSmallSquaresOpacity] = useState(Array(250000).fill(1));
+    const side = 500
+    const [smallSquaresOpacity, setSmallSquaresOpacity] = useState(Array(side * side).fill(1));
     // const [smallSquaresOpacity2, setSmallSquaresOpacity2] = useState(Array(16).fill(1));
     const [zoom, setZoom] = useState(0.5);
 
@@ -35,6 +36,7 @@ export const Dissapear = () => {
       <div style={{display: 'flex column', alignItems: 'center', justifyContent: 'center'}}>
         <button onClick={handleZoomIn}>+</button>
         <button onClick={handleZoomOut}>-</button>
+        <p style={{fontSize: '12px'}}>Cторона {side} кубов</p>
         <div style={{position: 'relative', overflow: 'hidden'}}>
         <div className="large-square" style={{ order: 1, transform: `scale(${zoom})`, transformOrigin: 'center' }}>
           {smallSquaresOpacity.map((opacity, index) => (
