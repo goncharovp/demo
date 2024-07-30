@@ -3,7 +3,7 @@ import './disapear.css'
 
 export const Dissapear = () => {
     // const [largeSquares, setLargeSquares] = useState(Array(36).fill(true));
-    const [smallSquaresOpacity, setSmallSquaresOpacity] = useState(Array(57600).fill(1));
+    const [smallSquaresOpacity, setSmallSquaresOpacity] = useState(Array(122500).fill(1));
     // const [smallSquaresOpacity2, setSmallSquaresOpacity2] = useState(Array(16).fill(1));
     const [zoom, setZoom] = useState(0.5);
 
