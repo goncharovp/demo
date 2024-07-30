@@ -7,22 +7,19 @@ export const Dissapear = () => {
     // const [smallSquaresOpacity2, setSmallSquaresOpacity2] = useState(Array(16).fill(1));
     const [zoom, setZoom] = useState(0.5);
 
-    const handleZoomIn = () => {
-      setZoom(zoom * 1.2);
-    };
-  
-    const handleZoomOut = () => {
-      setZoom(zoom / 1.2);
-    };
+    const handleZoomIn = useCallback(() => {
+      setZoom(prevZoom => prevZoom * 1.2);
+    }, [setZoom]);
+    
+    const handleZoomOut = useCallback(() => {
+      setZoom(prevZoom => prevZoom / 1.2);
+    }, [setZoom]);
   
   
     const handleSmallSquareClick = useCallback((index: any) => {
-      setSmallSquaresOpacity(prevOpacity => {
-          const newOpacity = [...prevOpacity];
-          newOpacity[index] = 0;
-          return newOpacity;
-      });
-  }, [setSmallSquaresOpacity]);
+      setSmallSquaresOpacity(prevOpacity => prevOpacity.map((opacity, i) => i === index ? 0 : opacity));
+    }, [setSmallSquaresOpacity]);
+    
 
     // const handleSmallSquareClick2 = (index: any) => {
     //     setSmallSquaresOpacity2(prevOpacity => {
@@ -39,11 +36,11 @@ export const Dissapear = () => {
         <button onClick={handleZoomIn}>+</button>
         <button onClick={handleZoomOut}>-</button>
         <div style={{position: 'relative', overflow: 'hidden'}}>
-        {noBigSquare && <div className="large-square" style={{ order: 1, transform: `scale(${zoom})`, transformOrigin: 'center' }}>
+        <div className="large-square" style={{ order: 1, transform: `scale(${zoom})`, transformOrigin: 'center' }}>
           {smallSquaresOpacity.map((opacity, index) => (
             <div key={index} className={`small-square`} style={{ opacity: opacity }} onClick={() => handleSmallSquareClick(index)} />
           ))}
-        </div>}
+        </div>
         {/* <div className="small-square-container" style={{ order: 2 }}>
           {smallSquaresOpacity2.map((opacity, index) => (
             <div key={index} className={`small-square2`} style={{ opacity: opacity }} onClick={() => handleSmallSquareClick2(index)} />
