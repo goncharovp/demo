@@ -29,7 +29,7 @@ export const Dissapear = () => {
     //     });
     // };
 
-    const noBigSquare = smallSquaresOpacity.includes(1)
+    // const noBigSquare = smallSquaresOpacity.includes(1)
   
     return (
       <div style={{display: 'flex column', alignItems: 'center', justifyContent: 'center'}}>
