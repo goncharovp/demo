@@ -46,6 +46,7 @@ export const ReactCube = () => {
             }
         }
         return cubes;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [cubesPerRow, cubeSize, spacing, opacityMap]);
 
     const cubes = useMemo(() => generateCubes(), [generateCubes]);
