@@ -1,0 +1,11 @@
+.CubeArea {
+    width: 50px;
+    height: 50px;
+    opacity: 1
+}
+
+.cubeTransparent {
+    width: 150px;
+    height: 6px;
+    opacity: 0
+}
